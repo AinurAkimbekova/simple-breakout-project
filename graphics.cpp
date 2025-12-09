@@ -19,6 +19,11 @@ struct Text {
     float spacing = 4.0f;
     Font* font = nullptr;
 };
+struct Fish {
+    Vector2 position = {0, 0.50};
+};
+
+Fish fish = {0, 0.50};
 
 constexpr float cell_scale = 0.6f;
 constexpr float screen_scale_divisor = 700.0f;
@@ -84,6 +89,13 @@ void draw_text(const Text& text)
     };
     DrawTextEx(*text.font, text.str.c_str(), pos, y, text.spacing, text.color);
 }
+void draw_fish()
+{
+    Vector2 position = {fish.position.x * screen_size.x, fish.position.y * screen_size.y};
+    fish.position.x += 0.001f;
+    draw_image(fish_texture, position.x, position.y, cell_size);
+}
+
 
 void derive_graphics_metrics()
 {
@@ -165,6 +177,9 @@ void draw_level()
                 break;
             case BLOCKS:
                 draw_image(block_texture, texture_x_pos, texture_y_pos, cell_size);
+                break;
+            case VOID:
+                draw_image(fish_texture, texture_x_pos, texture_y_pos, cell_size);
                 break;
             default:;
             }

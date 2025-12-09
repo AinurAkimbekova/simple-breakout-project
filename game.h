@@ -78,7 +78,7 @@ inline level level_3 = {
 
 inline constexpr size_t level_count = 3;
 inline level levels[level_count] = {
-   level_3, level_1, level_2
+   level_1, level_2, level_3,
 };
 
 inline game_state game_state = menu_state;

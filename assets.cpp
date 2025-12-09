@@ -18,6 +18,7 @@ void load_textures()
     void_texture = LoadTexture("data/images/void.png");
     block_texture = LoadTexture("data/images/block.png");
     paddle_texture = LoadTexture("data/images/paddle.png");
+    fish_texture = LoadTexture("data/images/fish.png");
     ball_sprite = load_sprite("data/images/ball/ball", ".png", 8, true, 10);
 }
 

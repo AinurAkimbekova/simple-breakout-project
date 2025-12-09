@@ -51,6 +51,7 @@ void draw()
     switch (game_state) {
     case menu_state:
         draw_menu();
+        draw_fish();
         break;
     case in_game_state:
         draw_level();
